@@ -5,6 +5,8 @@
 <?php $liste_services = getAllServices();?>
 
 <?php $liste_actualites = getAllActualites();?>
+
+<?php $liste_categories = getAllCategories();?>
           
           <main>
               
@@ -26,29 +28,16 @@
           
           <section class="produits clearfix grid">
               
-              <article class="article1 clearfix">
-              <h1>Porte badge</h1>
+              <?php foreach ($liste_categories as $categorie) : ?>
+              <article class="clearfix" style="margin-right: 25px;">
+                  <h1><?php echo $categorie['nom'];?></h1>
                   <hr class="soulignage">
-                  <img src="images/produit1.jpg">
-                  <p>Découvrez notre gamme complète de porte badges rigides injectés haute qualité, protection 2 faces d'1 ou 2 badges</p>
+                  <img src="images/<?php echo $categorie['image'];?>">
+                  <p><?php echo $categorie['description'];?></p>
                   <a href="#" class="btn">en savoir +</a>
               </article>
+              <?php endforeach;?>
               
-              <article class="article2">
-              <h1>Protège carte</h1>
-                  <hr class="soulignage">
-                  <img src="images/produit2.jpg">
-                  <p>Découvrez notre gamme complète de porte-cartes rigides injectés haute qualité, pour 1 ou 2 cartes</p>
-                  <a href="#" class="btn">en savoir +</a>
-              </article>
-              
-              <article>
-              <h1>RFID wall</h1>
-                  <hr class="soulignage">
-                  <img src="images/produit3.jpg">
-                  <p>Découvrez notre gamme de protection RFID WALL : protège-passeport, protège-cartes pour 1 ou 2 cartes</p>
-                  <a href="#" class="btn">en savoir +</a>
-              </article>
               
               <a href="#"><article class="promotions">
               <div class="bandeau"><h1>promotions</h1></div>
@@ -74,21 +63,17 @@
                   </div>
               
               <section class="grid actualites clearfix">
-                  
-                  
-                  
-                      
+
                  <h1>Nos actualités</h1>
                   <hr class="soulignage">
-                  
-                  
-                  
+  
                   <div class="clearfix">
                       
                       <?php foreach($liste_actualites as $actualite) : ?>
                       <article class="clearfix">
                   <img src="images/<?php echo $actualite['image'];?>">
                   <h2><?php echo $actualite['titre'];?></h2>
+                  <p style="margin-bottom:10px;"><?php echo $actualite['date_creation_format'];?></p>
                   <p><?php echo $actualite['description_courte'];?><a href="#">Lire la suite</a></p>
                   </article>
                   <?php endforeach ; ?>

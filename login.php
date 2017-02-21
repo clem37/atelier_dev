@@ -5,7 +5,7 @@
                     <input name="password" type="password" id="mdp" value="mdp">
                     <input name="connexion" type="submit" value="OK" id="ok">
                     <a href="#">Mot de passe ?</a>
-                </form>
+ </form>
     
 
 

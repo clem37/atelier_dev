@@ -3,8 +3,10 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $id = $_POST['id'];
-$nom = $_POST['nom_equipement'];
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$mail = $_POST['mail'];
 
-updateEquipement($id, $nom);
+updateUser($id, $nom, $prenom, $mail);
 
 header("Location: index.php");

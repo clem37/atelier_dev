@@ -1,12 +1,12 @@
 <?php
 require_once '../../../model/database.php';
 
-$liste_equipements = getAllEquipement();
+$liste_services = getAllServices();
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des équipements</h1>
+<h1>Gestion des services</h1>
 
 <a href="insert_form.php">Ajouter</a>
 
@@ -14,18 +14,22 @@ require_once '../../layout/header.php';
     <thead>
         <tr>
             <th>Nom</th>
+            <th>Description</th>
+            <th>Picto</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($liste_equipements as $equipement) : ?>
+        <?php foreach ($liste_services as $service) : ?>
         <tr>
-            <td><?php echo $equipement['nom']; ?></td>
+            <td><?php echo $service['nom']; ?></td>
+            <td><?php echo $service['description']; ?></td>
+            <td><?php echo $service['picto']; ?></td>
             <td>
-                <a href="update_form.php?id=<?php echo $equipement['id']; ?>">Modifier</a>
+                <a href="update_form.php?id=<?php echo $service['id']; ?>">Modifier</a>
                 <form action="delete_query.php" method="POST">
-                    <input value="<?php echo $equipement['icone']; ?>">
-                    <input type="hidden" name="id" value="<?php echo $equipement['id']; ?>">
+                    
+                    <input type="hidden" name="id" value="<?php echo $service['id']; ?>">
                     <input type="submit" value="Supprimer">
                 </form>
             </td>

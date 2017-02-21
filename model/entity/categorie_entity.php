@@ -1,12 +1,15 @@
 <?php
 
-function getAllVilles () {
+function getAllCategories () {
     global $connection;
     $query = "
         SELECT
-        ville.id,
-        ville.nom
-        FROM ville
+        categorie.id,
+        categorie.nom,
+        categorie.description,
+        categorie.image
+        FROM categorie
+        LIMIT 3;
         ";
    
     $stmt = $connection->prepare($query);

@@ -1,31 +1,13 @@
 <?php
 
-function getAllEquipements($id) {
-    global $connection;
-
-    $query = "
-        SELECT
-    equipement.nom,
-    equipement.icone,
-    equipement.id
-    FROM equipement
-    INNER JOIN annonce_has_equipement ON annonce_has_equipement.equipement_id = equipement.id
-    WHERE annonce_has_equipement.annonce_id = :id;
-    
-    ";
-    $stmt = $connection->prepare($query);
-    $stmt->bindParam(':id',$id);
-    $stmt->execute();
-
-    return $stmt->fetchAll();
-}
-
 function getAllServices () {
     global $connection;
     $query = "
         SELECT
+            service.id,
           service.nom,
-           service.picto
+          service.picto,
+          service.description
         FROM service;
         ";
     
@@ -36,15 +18,16 @@ function getAllServices () {
     
     }
     
-    function getEquipement($id) {
+    function getService($id) {
     global $connection;
     
     $query = "SELECT
-                equipement.id,
-                equipement.nom,
-                equipement.icone
-            FROM equipement
-            WHERE equipement.id = :id;";
+                service.id,
+                service.nom,
+                service.picto,
+                service.description
+            FROM service
+            WHERE service.id = :id;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);
@@ -53,37 +36,41 @@ function getAllServices () {
     return $stmt->fetch();
 }
     
-    function insertEquipement($nom) {
+    function insertService($nom, $description, $picto) {
     /* @var $connection PDO */
     global $connection;
     
-    $query = "INSERT INTO equipement (nom)
-                VALUES (:nom_equipement);";
+    $query = "INSERT INTO service (nom, description, picto)
+                VALUES (:nom_service, :description_service, :picto_service);";
 
     $stmt = $connection->prepare($query);
-    $stmt->bindParam(':nom_equipement', $nom);
+    $stmt->bindParam(':nom_service', $nom);
+    $stmt->bindParam(':description_service', $description);
+    $stmt->bindParam(':picto_service', $picto);
     $stmt->execute();
 }
 
-function updateEquipement($id, $nom) {
+function updateServices($id, $nom, $description, $picto) {
     /* @var $connection PDO */
     global $connection;
     
-    $query = "UPDATE equipement
-                SET nom = :nom
+    $query = "UPDATE service
+                SET nom = :nom, description = :description, picto = :picto
                 WHERE id = :id;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':nom', $nom);
+    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':picto', $picto);
     $stmt->execute();
 }
 
-function deleteEquipement($id) {
+function deleteService($id) {
     /* @var $connection PDO */
     global $connection;
     
-    $query = "DELETE FROM equipement WHERE id = :id;";
+    $query = "DELETE FROM service WHERE id = :id;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);

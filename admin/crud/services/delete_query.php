@@ -2,8 +2,8 @@
 require_once '../../security.php';
 require_once '../../../model/database.php';
 
-$nom = $_POST['nom_equipement'];
+$id = $_POST['id'];
 
-insertEquipement($nom);
+deleteService($id);
 
 header("Location: index.php");
