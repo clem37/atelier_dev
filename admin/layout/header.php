@@ -13,8 +13,10 @@ require_once __DIR__ . '/../security.php';
         <nav>
             <ul>
                 <li><a href="<?php echo $siteurl; ?>admin/">Dashboard</a></li>
-                <li><a href="<?php echo $siteurl; ?>admin/crud/ville/">Villes</a></li>
-                <li><a href="<?php echo $siteurl; ?>admin/crud/equipement/">Equipements</a></li>
+                <li><a href="<?php echo $siteurl; ?>admin/crud/utilisateurs/">Utilisateurs</a></li>
+                <li><a href="<?php echo $siteurl; ?>admin/crud/actualites/">Actualités</a></li>
+                <li><a href="<?php echo $siteurl; ?>admin/crud/services/">Services</a></li>
+                <li><a href="<?php echo $siteurl; ?>admin/crud/produits/">Produits</a></li>
                 <li><a href="<?php echo $siteurl; ?>index.php">Front</a></li>
                 <li><a href="<?php echo $siteurl; ?>logout.php">Logout</a></li>
             </ul>
