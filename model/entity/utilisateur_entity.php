@@ -62,7 +62,7 @@ function insertUser($nom, $prenom, $mail, $mot_de_passe) {
     global $connection;
     
     $query = "INSERT INTO utilisateur (nom, prenom, mail, mot_de_passe)
-                VALUES (:nom_utilisateur, :prenom_utilisateur, :mail_utilisateur, :mot_de_passe);";
+                VALUES (:nom_utilisateur, :prenom_utilisateur, :mail_utilisateur, MD5(:mot_de_passe));";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':nom_utilisateur', $nom);
