@@ -29,7 +29,7 @@ function getUserByEmailPassword($mail, $password) {
                 utilisateur.mail
             FROM utilisateur
             WHERE utilisateur.email = :email
-            AND utilisateur.mot_de_passe = :password
+            AND utilisateur.mot_de_passe = MD5(:password)
             ";
     
     $stmt = $connection->prepare($query);
