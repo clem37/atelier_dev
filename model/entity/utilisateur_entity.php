@@ -5,10 +5,9 @@ function getUser($id) {
     
     $query = "SELECT
                 utilisateur.id,
-                utilisateur.login,
-                utilisateur.image,
-                utilisateur.email,
-                utilisateur.admin
+                utilisateur.prenom,
+                utilisateur.mail,
+                utilisateur.nom
             FROM utilisateur
             WHERE utilisateur.id = :id
             ";
@@ -20,22 +19,21 @@ function getUser($id) {
     return $stmt->fetch();
 }
 
-function getUserByEmailPassword($email, $password) {
+function getUserByEmailPassword($mail, $password) {
     global $connection;
     
     $query = "SELECT
                 utilisateur.id,
-                utilisateur.login,
-                utilisateur.image,
-                utilisateur.email,
-                utilisateur.admin
+                utilisateur.nom,
+                utilisateur.prenom,
+                utilisateur.mail
             FROM utilisateur
             WHERE utilisateur.email = :email
-            AND utilisateur.mot_de_passe = MD5(:password)
+            AND utilisateur.mot_de_passe = :password
             ";
     
     $stmt = $connection->prepare($query);
-    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':email', $mail);
     $stmt->bindParam(':password', $password);
     $stmt->execute();
     

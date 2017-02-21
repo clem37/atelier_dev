@@ -75,14 +75,7 @@
                
                <h1 class="hidden_text">LOGO</h1>
                
-              <form method="post" action="">
-               <p class="hidden_text">img</p>
-                
-                   <input name="mail" type="text" id="mail" value="mail">
-                    <input name="mdp" type="text" id="mdp" value="mdp">
-                    <input name="connexion" type="submit" value="OK" id="ok">
-                    <a href="#">Mot de passe ?</a>
-                </form>
+              <?php require_once'login.php';?>
               
           </header>
 
