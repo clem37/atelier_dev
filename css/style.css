@@ -1,0 +1,1339 @@
+/* ------- COMMUNS ------- */
+
+/* Le * indique que toutes les balises sont concernées */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /*-- Suppression pb de padding */
+}
+
+/* clearfix */
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear:both;
+}
+
+img {
+    width:100%; /* il faut rajouter cette balise pour que la taille s'ajuste par la suite quand on la change image à 100% du parent */
+    height: auto; /*impératif  conserver les proportions*/
+    border-bottom: 2px solid rgba(237, 107, 47, 1);
+}
+
+section.services > article > img {
+    border-bottom: none;
+}
+
+/* -- texte caché -- */
+.hidden_text{
+   text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+/* -- navigations -- */
+
+ul{
+    margin: 0;
+    padding:0;
+}
+
+li {
+    list-style:none;
+}
+
+.grid{
+    width:97%;
+    max-width:980px; 
+    margin: 0 auto;
+    padding-left:1.3888888888888%;
+    padding-right:1.3888888888888%;
+    
+
+}
+
+
+/* POLICES */
+
+@font-face {
+   font-family:"JosefinBold";
+    src:url(../fonts/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+   font-family:"JosefinRegular";
+    src:url(../fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+   font-family:"JosefinSemiBold";
+    src:url(../fonts/JosefinSans-SemiBold.ttf);
+}
+
+/* TEXTES */
+
+h1 {
+    font-family:"JosefinBold", "sans-serif";
+    font-size:0.750em;
+    color:rgba(99, 99, 96, 1);
+    margin:0;
+    padding:0;
+    text-transform: uppercase;
+    text-align:center;
+}
+
+h2 {
+    font-family:"JosefinSemiBold", "sans-serif";
+    font-size:0.688em;
+    color:rgba(237, 107, 47, 1);
+    margin:0;
+    padding-bottom:14px;
+    
+}
+
+p {
+    font-size:0.625em;
+    font-family:"JosefinRegular";
+    color:rgba(99, 99, 96, 1);
+    padding:0;
+    margin:0;
+}
+
+/* autres */
+
+hr.soulignage {
+    width:6%;
+    height:2px;
+    background-color:rgba(237, 107, 47, 1);
+    margin:0 auto;
+    border-color: rgba(237, 107, 47, 1);
+    margin-top:7px;
+    margin-bottom:20px;
+}
+
+
+.bg_grey {
+    width:100%;
+    height:auto;
+    background-color:rgba(99, 99, 96, 0.4);
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:30px;
+    
+    
+}
+
+.btn {
+    display:block;
+    text-decoration:none;
+    color:rgba(250, 250, 250, 1);
+    
+    text-transform:uppercase;
+    max-width:125px;
+    
+    font-family:"JosefinRegular", "sans-serif";
+    font-size:0.750em;
+    background-color:rgba(52, 146, 205, 1);
+    
+    padding:10px 6px;
+    text-align:center;
+    margin:0 auto;
+    margin-bottom:20px;
+    margin-top:20px;
+    
+}
+
+.btn:hover,
+.btn:focus{
+    background-color:rgba(0, 116, 188, 1);
+}
+
+body {
+    padding-top:30px;
+}
+
+/* HEADER */ 
+
+nav.langues {
+    width:7%;
+    display:inline-block;
+    float:left;
+    margin-right:12.5%;
+}
+
+nav.langues > a{ 
+    text-decoration:none;
+    font-size:0.500em;
+    color:rgba(99, 99, 96, 1);
+}
+
+nav.langues > a:hover,
+nav.langues > a:focus {
+    color:rgba(237, 107, 47, 1);
+}
+    
+header > h1 {
+    background: url(../images/logo.png) center no-repeat;
+    background-size:cover;
+    max-width:124px;
+    height:44px;
+    display:inline-block;
+    float:left;
+
+}
+
+header > form {
+    width:22.2222%;
+    display:inline-block;
+    float:right;
+    margin-bottom:10px;
+}
+
+header > form > p {
+    margin:0 auto;
+    background:url(../images/avatar.png) no-repeat center;
+    background-size:cover;
+    max-width:12px;
+    height:13px;
+    margin-bottom:4px;
+}
+
+header  > form > input {
+    width:100%;
+    height:12px;
+    font-size:0.500em;
+    font-family:"JosefinRegular";
+    color:rgba(99, 99, 96, 1);
+    margin-bottom:4px;
+    font-style:italic;
+    border:1px solid rgba(99, 99, 96, 1);
+    padding-left:1.25%;
+    
+}
+
+header  > form > input#ok {
+    height:15px;
+    background-color:rgba(52, 146, 205, 1);
+    color:rgba(255,255,255,1);
+    font-style:normal;
+    font-size:0.625em;
+    border:1px solid rgba(52, 146, 205, 1);
+   margin-bottom:0;
+        
+}
+
+header > form > a {
+    color:rgba(99, 99, 96, 0.4);
+    text-decoration:none;
+    font-size:0.500em;
+    font-style:italic;
+    margin-left:15%;
+}
+
+header >  form > a:hover,
+header >  form > a:focus{
+    color:rgba(237, 107, 47, 1);
+
+}
+
+/* navigation */
+#menu-hamburger {
+    height:15px;
+    width:24px;
+    float:left;
+    display:inline-block;
+    cursor: pointer;
+    border:none;
+    margin-right:6.25%;
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.8);
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 4em;
+    text-decoration:none;
+    font-family:"JosefinRegular";
+    color:rgba(255,255,255,1);
+        
+}
+
+a.closebtn:hover,
+a.closebtn:focus{
+    color:rgba(237, 107, 47, 1);
+}
+
+ul.overlay-content > li {
+    margin-bottom:30px;
+}
+
+ul.overlay-content > li > a {
+    text-decoration:none;
+    font-family:"JosefinBold";
+    text-transform:uppercase;
+    font-size:1.125em;
+    color:rgba(255,255,255,1);
+    
+}
+
+ul.overlay-content > li > a:hover,
+ul.overlay-content > li > a:focus {
+   color:rgba(237, 107, 47, 1); 
+}
+
+/* --- DISPARITION DES SOUS-MENUS --- */
+
+nav ul ul {
+    position:absolute;
+    left:-9999em;
+}
+
+/* --- APPARITION DES DEUXIEMES NIVEAUX --- */
+
+
+nav ul li:hover ul {
+    position:absolute;
+   left:auto; /*automatiquement, les sous menus réapparaissent bien */
+    margin:0 auto;
+}
+
+/* --- MISE EN FORME UL 2EME NIVEAU --- */
+
+nav ul ul {
+    width:100%;
+    
+}
+
+/* --- MISE EN FORME LI 2EME NIVEAU --- */
+
+nav ul ul li {
+    display:block;
+    /* en cas de 3eme niveau, on mettrait ici une position relative */
+    
+    
+    
+}
+
+/* --- MISE EN FORME LIEN 2EME NIVEAU --- */
+
+nav ul ul li a {
+    display:block; /* pas obligatoire mais au cas où */
+   font-family:"JosefinBold";
+    text-transform:uppercase;
+    text-decoration:none;
+    font-size:1em;
+    color:rgba(255,255,255,1);
+    background-color:rgba(99, 99, 96, 1);
+    padding-top:10px;
+    padding-bottom:10px;
+      
+}
+
+nav ul ul li a:hover,
+nav ul ul li a:focus {
+    color:rgba(237, 107, 47, 1); 
+}
+
+
+
+/* main */
+
+/* slider */
+
+#jssor_1 {
+    position:relative;
+    margin:0 auto;
+    width:100%;
+    height:110px;
+    overflow:hidden;
+    visibility:hidden;
+    margin-bottom:30px;
+}
+
+.slides {
+   position:relative;
+    top:0px;
+    width:100%;
+    height:110px;
+    overflow:hidden;
+}
+
+div.slides > div > img {
+    height:auto;
+    width:100%;
+    border-bottom: none;
+    
+}
+
+/* produits */
+
+section.produits > article {
+    width:59.722222222%;
+    margin:0 auto;
+    margin-bottom:30px;
+}
+
+section.produits > article > a {
+    margin-left:50%;
+}
+
+section.produits > article > hr {
+    width:10.23%;
+}
+
+section.produits > a > article.promotions {
+    float:right;
+    width:40%;
+    height:85px;
+    background:url(../images/promotions.jpg) center no-repeat;
+    background-size:cover;
+    padding-top:8px;
+    margin-bottom:30px;
+}
+
+section.produits > a >article.promotions > div.bandeau {
+    background-color: rgba(237, 107, 47, 0.8);
+    padding-top:7px;
+    padding-bottom:5px;
+    padding-left:5%;
+    margin-bottom:18px;
+}
+
+section.produits > a >article.promotions > div.bandeau > h1 {
+    text-align:left;
+    color:rgba(250, 250, 250, 1);
+    
+}
+
+section.produits > a >article.promotions > p {
+    text-transform:uppercase;
+    text-align:right;
+    width:76.27%;
+    float:right;
+    font-family:"JosefinBold";
+}
+
+/* nos services */
+
+section.services > article{
+    width:22.22222222%;
+    float:left;
+    text-align:center;
+    
+}
+
+section.services > article.article1,
+section.services > article.article2,
+section.services > article.article3,
+section.services > article.article5,
+section.services > article.article6{
+    margin-right:2.7777777777%
+}
+
+section.services > article.article5, 
+section.services > article.article6,
+section.services > article.article7{
+    margin-top:22px;
+}
+
+section.services > article.article5{
+   
+    margin-left:12.5%
+}
+
+section.services > article.article7 {
+    margin-right:12.5%;
+}
+section.services > article > a{
+    text-decoration:none;
+    font-size:0.625em;
+    font-family:"JosefinRegular";
+    color:rgba(99, 99, 96, 1);
+    padding:0;
+    
+}
+
+section.services > article > a:hover,
+section.services > article > a:focus{
+    color:rgba(237, 107, 47, 1);
+}
+
+section.services > article.article1 > p {
+    background:url(../images/picto_impression.png) no-repeat center;
+    height:35px;
+    max-width:35px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+section.services > article.article2 > p {
+    background:url(../images/picto_tampon.png) no-repeat center;
+    height:35px;
+    max-width:41px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+section.services > article.article3 > p {
+    background:url(../images/picto_gravure.png) no-repeat center;
+    height:35px;
+    max-width:32px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+section.services > article.article4 > p {
+    background:url(../images/picto_color.png) no-repeat center;
+    height:35px;
+    max-width:35px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+section.services > article.article5 > p {
+    background:url(../images/picto_etiquette.png) no-repeat center;
+    height:35px;
+    max-width:35px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+section.services > article.article6 > p {
+    background:url(../images/picto_depliant.png) no-repeat center;
+    height:35px;
+    max-width:36px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+section.services > article.article7 > p {
+    background:url(../images/picto_blister.png) no-repeat center;
+    height:35px;
+    max-width:54px;
+    background-size:cover;
+    padding:0;
+    margin:0 auto;
+    margin-bottom:9px;
+}
+
+/* nos actualités */
+
+section.actualites > div > article {
+    margin-bottom:12px;
+}
+
+
+section.actualites > div > article > img {
+    width:40.9722222%;
+    float:left;
+    margin-right:2.7777777777%;
+}
+
+section.actualites > div > article > h2,
+section.actualites > div > article > p {
+    width:53.472222222222222%;
+    float:right;
+}
+
+section.actualites > div > article > p > a {
+    text-decoration:none;
+    color:rgba(237, 107, 47, 1);
+}
+
+/* à propos */
+
+section.apropos > div.grid > p{
+    padding-bottom:15px;
+}
+
+
+section.apropos > div.grid > div > div.contactez-nous {
+    width:40.9722222222%;
+    float:left;
+    margin-right:2.7777777777%;
+}
+
+section.apropos > div.grid > div > div.contactez-nous > p > a {
+    text-decoration:none;
+   font-size:1em;
+    font-family:"JosefinRegular";
+    color:rgba(99, 99, 96, 1); 
+    
+}
+
+section.apropos > div.grid > div > div.contactez-nous > p > a:hover,
+section.apropos > div.grid > div > div.contactez-nous > p > a:focus {
+    color:rgba(237, 107, 47, 1);
+}
+
+div.echantillon > p {
+    padding-bottom:12px;
+}
+
+div.maps {
+   width:53.4722222222%;
+    float:right;
+    margin-bottom:30px;
+}
+
+div.echantillon {
+    text-align:center;
+    width:47.22222222%;
+    margin-right:2.7777777777%;
+    float:left;
+}
+
+div.metier {
+    text-align:center;
+    width:47.22222222%;
+    float:left;
+}
+
+/* footer */ 
+
+footer {
+   background:rgba(99, 99, 96, 1);  
+}
+
+footer > div >h1 {
+    background: url(../images/logo_footer.png) center no-repeat;
+    background-size:cover;
+    max-width:124px;
+    height:44px;
+    margin:0 auto;
+}
+
+footer > div > p {
+    color:rgba(250, 250, 250, 1);
+    text-align:center;
+    margin-top:8px;
+    padding-bottom:8px;
+    font-size:0.500em;
+}
+footer > div > nav {
+    margin-bottom:12px;
+}
+
+footer > div > nav > ul > li{
+    display:inline-block;
+}
+
+footer > div > nav > ul > li > a {
+    color:rgba(250, 250, 250, 1);
+    text-decoration:none;
+    font-size:0.500em;
+    font-family:"JosefinRegular"
+}
+
+footer > div > nav > ul > li > a:hover,
+footer > div > nav > ul > li > a:focus {
+    color:rgba(237, 107, 47, 1);
+}
+
+/* ----------------------------------
+             MEDIA QUERIES
+--------------------------------*/
+
+/* tablette */
+
+@media all and (min-width:780px) {
+    
+    /* TEXTES */
+
+h1 {
+    
+    font-size:1em;
+    
+}
+
+h2 {
+    
+    font-size:0.938em;
+    
+}
+
+p {
+    font-size:0.875em;
+  
+}
+
+/* autres */
+
+hr.soulignage {
+    width:5.1282%;
+    margin-top:13px;
+    margin-bottom:25px;
+}
+
+
+.bg_grey {
+    width:100%;
+    height:auto;
+    background-color:rgba(99, 99, 96, 0.4);
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom:50px;
+    
+    
+}
+
+.btn {
+    max-width:180px;
+
+    font-size:1em;
+    
+    padding:15px 40px;
+    margin-bottom:45px;
+    margin-top:45px;
+    
+}
+    
+    body {
+        padding-top:40px;
+    }
+    
+    /* header */
+    
+    header > h1 {
+    max-width:245px;
+    height:87px;
+    
+}
+    
+    nav.langues {
+    
+   margin-right:14%;
+    
+}
+
+nav.langues > a{ 
+    font-size:0.750em;
+    padding-left:10%;
+}
+
+    
+
+header > form {
+    margin-bottom:27px;
+}
+
+header > form > p {
+    background-size:cover;
+    max-width:28px;
+    height:30px;
+    margin-bottom:14px;
+}
+
+header > form > input {
+    height:24px;
+    font-size:0.750em;
+    margin-bottom:12px;
+    padding-left:2%;
+    
+}
+
+header >  form > input#ok {
+    height:28px;
+    font-size:0.875em;
+    margin-top:0;
+    margin-bottom:0;
+        
+}
+
+header >  form > a {
+    font-size:0.750em;
+    margin-left:25%;
+}
+
+    /* navigation */
+#menu-hamburger {
+    height:24px;
+    width:50px;
+    margin-right:1.9230%;
+}
+
+
+
+.overlay .closebtn {
+    font-size: 5em;
+
+        
+}
+
+
+
+ul.overlay-content > li > a {
+    font-size:1.250em;
+
+    
+}
+
+
+
+/* --- MISE EN FORME LIEN 2EME NIVEAU --- */
+
+nav ul ul li a {
+    font-size:1.125em;
+}
+
+
+    /* main */
+    
+    /*slider */
+    
+    #jssor_1 {
+    height:190px;
+
+}
+
+.slides {
+    height:190px;
+
+}
+
+div.slides > div > img {
+    height:auto;
+
+    
+}
+    
+   
+/* produits */
+
+section.produits > article {
+    width:31.41%;
+    float:left;
+    
+}
+   
+    section.produits > article.article1{
+        margin-left:1%;
+    }
+    
+    section.produits > article.article1, 
+    section.produits > article.article2 {
+        margin-right: 1.9230%;
+    }
+    
+    section.produits > article > a {
+    margin-left:23%;
+}
+    
+    section.produits > article > hr {
+    width:16.32%;
+}
+    
+    section.produits > a > article.promotions {
+    float:right;
+    width:31.41%;
+    height:125px;
+    padding-top:17px;
+    margin-bottom:50px;
+}
+    
+    section.produits > a >article.promotions > div.bandeau {
+    padding-top:10px;
+    padding-bottom:7px;
+    margin-bottom:18px;
+}
+    
+    section.produits > a >article.promotions > p {
+
+    width:70%;
+    
+}
+    
+    /* nos services */
+
+section.services > article{
+    width:23.07%;
+    
+}
+
+section.services > article.article1,
+section.services > article.article2,
+section.services > article.article3,
+section.services > article.article5,
+section.services > article.article6{
+    margin-right: 1.9230%;
+}
+
+section.services > article.article5, 
+section.services > article.article6,
+section.services > article.article7{
+    margin-top:38px;
+}
+
+section.services > article.article5{
+   
+    margin-left:13%;
+}
+
+section.services > article.article7 {
+    margin-right:13%;
+}
+section.services > article > a{
+    font-size:0.875em;
+
+    
+}
+
+
+section.services > article.article1 > p {
+    height:50px;
+    max-width:50px;
+    margin-bottom:16px;
+}
+
+section.services > article.article2 > p {
+    height:50px;
+    max-width:59px;
+    margin-bottom:16px;
+}
+
+section.services > article.article3 > p {
+    height:50px;
+    max-width:45px;
+    margin-bottom:16px;
+}
+
+section.services > article.article4 > p {
+   height:50px;
+    max-width:50px;
+    margin-bottom:16px;
+}
+
+section.services > article.article5 > p {
+    height:50px;
+    max-width:50px;
+    margin-bottom:16px;
+}
+
+section.services > article.article6 > p {
+   height:50px;
+    max-width:52px;
+    margin-bottom:16px;
+}
+
+section.services > article.article7 > p {
+   height:50px;
+    max-width:77px;
+    margin-bottom:16px;
+}
+
+    /* nos actualités */
+
+section.actualites > div > article {
+    margin-bottom:25px;
+}
+
+
+section.actualites > div > article > img {
+    width:39.7435%;
+    margin-right:1.9230%;
+}
+
+section.actualites > div > article > h2,
+section.actualites > div > article > p {
+    width:56.41%;
+    float:right;
+}
+    
+    /* à propos */
+
+
+section.apropos > div.grid > div > div.contactez-nous {
+    width:48,0769%;
+    margin-right:1.9230%;
+}
+
+
+div.echantillon > p {
+    padding-bottom:0px;
+}
+
+div.maps {
+  width:53.4722222222%;
+    margin-bottom:45px;
+}
+
+div.echantillon {
+    width:39.7435%;
+    margin-left:8.33333333333%;
+    margin-right:1.9230%;
+}
+
+div.metier {
+    width:39.7435%;
+    float:left;
+}
+
+    /* footer */
+
+footer > div >h1 {
+    max-width:245px;
+    height:87px;
+}
+
+footer > div > p {
+    margin-top:15px;
+    padding-bottom:15px;
+    font-size:0.750em;
+}
+footer > div > nav {
+    padding-top:12px;
+    margin-bottom:15px;
+}
+
+
+footer > div > nav > ul > li > a {
+    font-size:0.750em;
+    
+}
+  
+    
+}
+
+/* ----------------------------------
+             MEDIA QUERIES
+--------------------------------*/
+
+/* desktop */
+
+@media all and (min-width:980px) {
+    
+    /* TEXTES */
+
+h1 {
+    
+    font-size:1.250em;
+    
+}
+
+h2 {
+    
+    font-size:1.125em;
+    
+}
+
+p {
+    font-size:1em;
+  
+}
+
+/* autres */
+
+hr.soulignage {
+    width:6.122%;
+    margin-top:17px;
+    margin-bottom:40px;
+}
+
+
+.bg_grey {
+    width:100%;
+    height:auto;
+    background-color:rgba(99, 99, 96, 0.4);
+    padding-top:25px;
+    padding-bottom:30px;
+    margin-bottom:40px;
+    
+    
+}
+
+.btn {
+    max-width:220px;
+
+    font-size:1.250em;
+    
+    padding:17px 50px;
+    margin-bottom:50px;
+    margin-top:50px;
+    
+}
+    
+       body {
+        padding-top:40px;
+    }
+    
+    /* header */
+    
+    header > h1 {
+    max-width:300px;
+    height:107px;
+    
+}
+    
+     nav.langues {
+    width:10%;
+    margin-right:14%;
+}
+
+nav.langues > a{ 
+    font-size:1em;
+    padding-left:15%;
+}
+
+
+header > form > p {
+    max-width:42px;
+    height:45px;
+}
+
+header > form > input {
+    height:35px;
+    font-size:0.875em;
+    margin-bottom:15px;
+    padding-left:5%;
+    
+}
+
+header >  form > input#ok {
+    height:40px;
+    font-size:1em;
+        
+}
+
+header >  form > a {
+    font-size:0.875em;
+    margin-left:30%;
+}
+
+    
+    /* main */
+    
+    /* slider */
+    
+        #jssor_1 {
+    height:290px;
+
+}
+
+.slides {
+    height:290px;
+
+}
+
+div.slides > div > img {
+    height:auto;
+
+    
+}
+
+/* produits */
+
+section.produits > article {
+    width:30.61%;
+    float:left;
+    
+}
+    
+    section.produits > article.article1{
+        margin-left:1%;
+    }
+    
+    section.produits > article.article1, 
+    section.produits > article.article2 {
+        margin-right: 2.040%;
+    }
+    
+    
+    section.produits > article > hr {
+    width:20%;
+}
+    
+    section.produits > a > article.promotions {
+   
+    width:30.61%;
+    height:150px;
+    padding-top:20px;
+    margin-bottom:120px;
+}
+    
+    section.produits > a >article.promotions > div.bandeau {
+    padding-top:15px;
+    padding-bottom:10px;
+    padding-left:5%;
+    margin-bottom:25px;
+}
+    
+    /* nos services */
+
+section.services > article{
+    width:22.4489%;
+    
+}
+
+section.services > article.article1,
+section.services > article.article2,
+section.services > article.article3,
+section.services > article.article5,
+section.services > article.article6{
+    margin-right: 2.040%;
+}
+
+section.services > article.article5, 
+section.services > article.article6,
+section.services > article.article7{
+    margin-top:55px;
+}
+
+section.services > article.article5{
+   
+    margin-left:14.2857%;
+}
+
+section.services > article.article7 {
+    margin-right:14.2857%;
+}
+section.services > article > a{
+    font-size:1em;
+
+    
+}
+
+
+section.services > article.article1 > p {
+    height:60px;
+    max-width:60px;
+}
+
+section.services > article.article2 > p {
+    height:60px;
+    max-width:71px;
+}
+
+section.services > article.article3 > p {
+    height:60px;
+    max-width:54px;
+}
+
+section.services > article.article4 > p {
+   height:60px;
+    max-width:60px;
+
+}
+
+section.services > article.article5 > p {
+    height:60px;
+    max-width:60px;
+
+}
+
+section.services > article.article6 > p {
+   height:60px;
+    max-width:63px;
+    
+}
+
+section.services > article.article7 > p {
+   height:60px;
+    max-width:92px;
+    
+}
+    
+     /* nos actualités */
+
+section.actualites > div > article {
+    margin-bottom:50px;
+}
+
+
+section.actualites > div > article > img {
+    width:38.7755%;
+   margin-right: 2.040%;
+}
+
+section.actualites > div > article > h2,
+section.actualites > div > article > p {
+    width:55.10%;
+    
+}
+    
+    /* à propos */
+
+
+section.apropos > div.grid > div > div.contactez-nous {
+    margin-top:40px;
+    
+    margin-right: 2.040%;
+}
+
+
+div.echantillon > p {
+    padding-bottom:0px;
+}
+
+div.maps {
+    margin-top:40px;
+    margin-bottom:30px;
+}
+
+div.echantillon {
+    width:38.7755%;
+    margin-left:8.1632%;
+    margin-right: 2.040%;
+}
+
+div.metier {
+    width:38.7755%;
+}
+    
+     /* footer */
+
+footer > div >h1 {
+    max-width:300px;
+    height:107px;
+}
+
+footer > div > p {
+    margin-top:20px;
+    padding-bottom:30px;
+    font-size:0.875em;
+}
+footer > div > nav {
+    
+    margin-bottom:30px;
+}
+
+
+footer > div > nav > ul > li > a {
+    font-size:0.875em;
+    
+}
+   
+    
+}
