@@ -8,7 +8,7 @@
     <div>
         <label for="nom">Nom</label>
         <input type="text" name="nom_service" id="libelle">
-        <label for ="picto">Picto</label>
+        <label for ="picto_service">Picto</label>
         <input type="file" name="picto_service">
         
         <textarea name="description_service"></textarea>

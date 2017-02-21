@@ -55,7 +55,7 @@
                   
                   <?php foreach ($liste_services as $service) : ?>
                   <article>
-                      <p class="hidden_text" style="background:url(images/<?php echo $service['picto'];?>);background-repeat:no-repeat; background-position:center; height:100px; width:150px;">Image</p>
+                      <p class="hidden_text" style="background:url(uploads/<?php echo $service['picto'];?>);background-repeat:no-repeat; background-position:center; height:100px; width:150px;">Image</p>
                       <a href="#"><?php echo $service['nom'];?></a>
                   </article>
                   <?php endforeach ; ?>
@@ -72,7 +72,7 @@
                       
                       <?php foreach($liste_actualites as $actualite) : ?>
                       <article class="clearfix">
-                  <img src="images/<?php echo $actualite['image'];?>">
+                  <img src="uploads/<?php echo $actualite['image'];?>">
                   <h2><?php echo $actualite['titre'];?></h2>
                   <p style="margin-bottom:10px;"><?php echo $actualite['date_creation_format'];?></p>
                   <p><?php echo $actualite['description_courte'];?><a href="#">Lire la suite</a></p>
