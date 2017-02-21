@@ -9,7 +9,7 @@ require_once '../../layout/header.php';
 
 <h1>Modification d'un service</h1>
 
-<form action="update_query.php" method="POST">
+<form action="update_query.php" method="POST" enctype="multipart/form-data">
     <div>
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom" value="<?php echo $service['nom']; ?>">
