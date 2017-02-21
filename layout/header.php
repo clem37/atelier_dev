@@ -29,6 +29,8 @@ if(isset($_SESSION['id'])) {
     <script src="js/jssor.slider-22.2.7.mini.js" type="text/javascript"></script>
       <script type="text/javascript" src="js/script.js"></script>
       
+
+      
       <!-- IMPERATIF POUR LE RESPONSIVE WEBDESIGN -->
       <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"> <!-- meta à mettre absolument pour bien que tout se redimensionne -->
       

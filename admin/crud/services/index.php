@@ -10,7 +10,7 @@ require_once '../../layout/header.php';
 
 <a href="insert_form.php">Ajouter</a>
 
-<table id="myTable">
+<table id="myTable" class="display">
     <thead>
         <tr>
             <th>Nom</th>
