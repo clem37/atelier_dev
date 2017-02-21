@@ -7,6 +7,10 @@ require_once __DIR__ . '/../security.php';
     <head>
         <title>Administration</title>
         <link rel="stylesheet" href="<?php echo $siteurl; ?>admin/css/style.css"/>
+        <link rel="stylesheet" type = text/css href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="layout/script.js"></script>
+        
     </head>
     <body>
 
@@ -21,3 +25,5 @@ require_once __DIR__ . '/../security.php';
                 <li><a href="<?php echo $siteurl; ?>logout.php">Logout</a></li>
             </ul>
         </nav>
+        
+        
