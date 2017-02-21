@@ -1,4 +1,8 @@
 <?php require_once "layout/header.php";?>
+
+<?php require_once "model/database.php";?>
+
+<?php $liste_services = getAllServices();?>
           
           <main>
               
@@ -57,41 +61,13 @@
                  <h1>Nos services</h1>
                   <hr class="soulignage">
                   
-                  <article class="article1">
-                      <p class="hidden_text">Image 1</p>
-                      <a href="#">Impression numérique</a>
+                  <?php foreach ($liste_services as $service) : ?>
+                  <article>
+                      <p class="hidden_text">Image</p>
+                      <a href="#"><?php echo $service['nom'];?></a>
                   </article>
+                  <?php endforeach ; ?>
                   
-                  <article class="article2">
-                  
-                      <p class="hidden_text">Image 2</p>
-                      <a href="#">Sérigraphie / Tampographie</a>
-                  </article>
-                  
-                  <article class="article3">
-                  <p class="hidden_text">Image 3</p>
-                      <a href="#">Gravure</a>
-                  </article>
-                  
-                  <article class="article4">
-                  <p class="hidden_text">Image 4</p>
-                      <a href="#">Fabrication en coloris spécifique</a>
-                  </article>
-                  
-                  <article class="article5">
-                  <p class="hidden_text">Image 5</p>
-                      <a href="#">Pose d'étiquettes</a>
-                  </article>
-                  
-                  <article class="article6">
-                  <p class="hidden_text">Image 6</p>
-                      <a href="#">Fourniture de dépliants personnalisés</a>
-                  </article>
-                  
-                  <article class="article7">
-                  <p class="hidden_text">Image 7</p>
-                      <a href="#">Mise sous blister</a>
-                  </article>
               </section>
                   </div>
               

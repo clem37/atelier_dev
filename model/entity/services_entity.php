@@ -20,15 +20,15 @@ function getAllEquipements($id) {
     return $stmt->fetchAll();
 }
 
-function getAllEquipement () {
+function getAllServices () {
     global $connection;
     $query = "
         SELECT
-          equipement.nom,
-    equipement.icone,
-    equipement.id
-        FROM equipement
+          service.nom,
+           service.picto
+        FROM service
         ";
+    
     $stmt = $connection->prepare($query);
     $stmt->execute();
 
