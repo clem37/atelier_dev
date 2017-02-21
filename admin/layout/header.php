@@ -9,7 +9,7 @@ require_once __DIR__ . '/../security.php';
         <link rel="stylesheet" href="<?php echo $siteurl; ?>admin/css/style.css"/>
         <link rel="stylesheet" type = text/css href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
         <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" type="text/javascript"></script>
-        <script src="layout/script.js"></script>
+        <script src="layout/script.js" type="text/javascript"></script>
         
     </head>
     <body>
