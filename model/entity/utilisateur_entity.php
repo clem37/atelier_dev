@@ -28,7 +28,7 @@ function getUserByEmailPassword($mail, $password) {
                 utilisateur.prenom,
                 utilisateur.mail
             FROM utilisateur
-            WHERE utilisateur.email = :email
+            WHERE utilisateur.mail = :email
             AND utilisateur.mot_de_passe = MD5(:password)
             ";
     

@@ -18,12 +18,9 @@ if (isset($_SESSION['id'])) {
     }
 }
 
-/*
+
 // Si l'utilisateur n'est pas authentifié
 if (!isset($user['id'])) {
     // Redirection vers la page de login
-    header("Location: ../login.php");
-} elseif (!$user['admin']){ /* revient a dire == 0 donc pas admin */
-    // redirection vers la page d'accueil */
-    //header("Location: ../index.php");
-//}
+    header("Location: ../index.php");
+}

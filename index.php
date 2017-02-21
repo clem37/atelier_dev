@@ -7,14 +7,15 @@
 <?php $liste_actualites = getAllActualites();?>
 
 <?php $liste_categories = getAllCategories();?>
-          
+
+
           <main>
               
               <div id="jssor_1">
  
         <div data-u="slides" class="slides" >
             <div>
-                <img  src="images/slider1.jpg" />
+                <img src="images/slider1.jpg" />
                 
             </div>
             <div>
@@ -54,7 +55,7 @@
                   
                   <?php foreach ($liste_services as $service) : ?>
                   <article>
-                      <p class="hidden_text">Image</p>
+                      <p class="hidden_text" style="background:url(images/<?php echo $service['picto'];?>);background-repeat:no-repeat; background-position:center; height:100px; width:150px;">Image</p>
                       <a href="#"><?php echo $service['nom'];?></a>
                   </article>
                   <?php endforeach ; ?>

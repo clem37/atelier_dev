@@ -1,3 +1,12 @@
+<?php
+require_once 'model/database.php';
+
+session_start();
+
+if(isset($_SESSION['id'])) {
+    $user = getuser($_SESSION['id']);
+}
+?>
 <!doctype html>
   <html>
   <head>
@@ -58,7 +67,7 @@
                    </li>
                    
                    <li>
-                   <a href="#">Contact</a>
+                   <a href="contact.php">Contact</a>
                    </li>
                    
                    <li>
