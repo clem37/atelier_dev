@@ -81,24 +81,18 @@
                  <h1>Nos actualités</h1>
                   <hr class="soulignage">
                   
+                  
+                  
                   <div class="clearfix">
-                  <article class="clearfix">
-                  <img src="images/actualite1.jpg">
-                      <h2>Jugement cours d'appel de Rennes du 27/10/2015</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">Lire la suite</a></p>
+                      
+                      <?php foreach($liste_actualites as $actualite) : ?>
+                      <article class="clearfix">
+                  <img src="images/<?php echo $actualite['image'];?>">
+                  <h2><?php echo $actualite['titre'];?></h2>
+                  <p><?php echo $actualite['description_courte'];?><a href="#">Lire la suite</a></p>
                   </article>
+                  <?php endforeach ; ?>
                   
-                  <article class="clearfix">
-                  <img src="images/actualite2.jpg">
-                      <h2>Attestation protection RFID</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">Lire la suite</a></p>
-                  </article>
-                  
-                  <article>
-                  <img src="images/actualite2.jpg">
-                      <h2>RFID WALL</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">Lire la suite</a></p>
-                  </article>
                   </div>
                   <a href="#" class="btn">Voir +</a>
               

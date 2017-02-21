@@ -11,7 +11,8 @@ function getAllActualites() {
     actualite.date_creation,
     DATE_FORMAT(actualite.date_creation, '%d %M %Y') AS 'date_creation_format'
     FROM actualite
-    ORDER BY actualite.date_creation DESC
+    ORDER BY actualite.date_creation ASC
+    LIMIT 3;
     
     ";
     
@@ -21,71 +22,7 @@ function getAllActualites() {
     return $stmt->fetchAll();
 }
 
-function getAnnonce($id) {
-    global $connection;
 
-    $query = "
-        SELECT
-    annonce.titre,
-    annonce.image,
-    annonce.description,
-    annonce.prive,
-    annonce.id,
-    annonce.nb_chambres,
-    annonce.nb_lits,
-    annonce.utilisateur_id,
-    utilisateur.email,
-    utilisateur.login as utilisateur_nom,
-    utilisateur.image as utilisateur_image, 
-    annonce.ville_id,
-    ville.nom
-    FROM annonce
-    INNER JOIN utilisateur ON utilisateur.id = annonce.utilisateur_id
-    INNER JOIN ville ON ville.id = annonce.ville_id
-    WHERE annonce.id = :id
-    
-    ";
-    $stmt = $connection->prepare($query);
-    $stmt->bindParam(':id',$id);
-    $stmt->execute();
-
-    return $stmt->fetch();
-}
-
-function searchAnnonces($id, $equipement_ids) {
-    global $connection;
-
-    $query = "
-        SELECT
-    annonce.titre,
-    annonce.image,
-    annonce.description,
-    annonce.prive,
-    annonce.id,
-    annonce.nb_chambres,
-    annonce.nb_lit,
-    annonce.utilisateur_id,
-    utilisateur.email,
-    utilisateur.login as utilisateur_nom,
-    utilisateur.image as utilisateur_image, 
-    annonce.ville_id,
-    ville.nom
-    FROM annonce
-    INNER JOIN utilisateur ON utilisateur.id = annonce.utilisateur_id
-    INNER JOIN ville ON ville.id = annonce.ville_id
-    LEFT JOIN annonce_has_equipement ON annonce_has_equipement.annonce_id = annonce.id
-    WHERE ville.id = :id
-    AND annonce_has_equipement.equipement_id IN (1)
-    GROUP BY annonce.id
-
-    ";
-    $stmt = $connection->prepare($query);
-     $stmt->bindParam(':id',$id);
-    $stmt->bindParam(':equipement_ids', $equipement_ids);
-    $stmt->execute();
-
-    return $stmt->fetchAll();
-}
 function insertAnnonce($titre, $description, $prix, $image, $prive, $nb_chambres, $nb_lits, $ville_id, $equipement_ids){
     global $connection;
     
