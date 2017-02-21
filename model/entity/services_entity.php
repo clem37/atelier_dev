@@ -26,7 +26,7 @@ function getAllServices () {
         SELECT
           service.nom,
            service.picto
-        FROM service
+        FROM service;
         ";
     
     $stmt = $connection->prepare($query);

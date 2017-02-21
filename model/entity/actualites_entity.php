@@ -1,20 +1,20 @@
 <?php
 
-function getAllAnnonces() {
+function getAllActualites() {
     global $connection;
 
     $query = "
         SELECT
-    annonce.titre,
-    annonce.image,
-    annonce.nb_chambres,
-    annonce.description,
-    annonce.nb_lits,
-    annonce.prive,
-    annonce.id
-    FROM annonce;
+    actualite.titre,
+    actualite.image,
+    actualite.description_courte,
+    actualite.date_creation,
+    DATE_FORMAT(actualite.date_creation, '%d %M %Y') AS 'date_creation_format'
+    FROM actualite
+    ORDER BY actualite.date_creation DESC
     
     ";
+    
     $stmt = $connection->prepare($query);
     $stmt->execute();
 

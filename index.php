@@ -3,6 +3,8 @@
 <?php require_once "model/database.php";?>
 
 <?php $liste_services = getAllServices();?>
+
+<?php $liste_actualites = getAllActualites();?>
           
           <main>
               
