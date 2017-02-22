@@ -1,11 +1,15 @@
 <?php
 require_once '../../../model/database.php';
 
+
+
 $id = $_GET['id'];
 $actualite = getActualite($id);
 
 require_once '../../layout/header.php';
 ?>
+<script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
 
 <h1>Modification d'une actualité</h1>
 

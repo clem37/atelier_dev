@@ -1,5 +1,7 @@
 <?php require_once '../../layout/header.php'; ?>
 
+
+
 <h1>Ajout d'un nouvel utilisateur</h1>
 
 <form action="insert_query.php" method="POST">
