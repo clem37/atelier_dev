@@ -7,7 +7,8 @@ function getUser($id) {
                 utilisateur.id,
                 utilisateur.prenom,
                 utilisateur.mail,
-                utilisateur.nom
+                utilisateur.nom,
+                utilisateur.admin
             FROM utilisateur
             WHERE utilisateur.id = :id
             ";
@@ -26,7 +27,8 @@ function getUserByEmailPassword($mail, $password) {
                 utilisateur.id,
                 utilisateur.nom,
                 utilisateur.prenom,
-                utilisateur.mail
+                utilisateur.mail,
+                utilisateur.admin
             FROM utilisateur
             WHERE utilisateur.mail = :email
             AND utilisateur.mot_de_passe = MD5(:password)
@@ -47,7 +49,8 @@ function getAllUser() {
                 utilisateur.id,
                 utilisateur.prenom,
                 utilisateur.mail,
-                utilisateur.nom
+                utilisateur.nom,
+                utilisateur.admin
             FROM utilisateur;
             ";
     
@@ -57,27 +60,28 @@ function getAllUser() {
     return $stmt->fetchAll();
 }
 
-function insertUser($nom, $prenom, $mail, $mot_de_passe) {
+function insertUser($nom, $prenom, $mail, $mot_de_passe, $admin) {
     /* @var $connection PDO */
     global $connection;
     
-    $query = "INSERT INTO utilisateur (nom, prenom, mail, mot_de_passe)
-                VALUES (:nom_utilisateur, :prenom_utilisateur, :mail_utilisateur, MD5(:mot_de_passe));";
+    $query = "INSERT INTO utilisateur (nom, prenom, mail, mot_de_passe, admin)
+                VALUES (:nom_utilisateur, :prenom_utilisateur, :mail_utilisateur, MD5(:mot_de_passe), :administrateur);";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':nom_utilisateur', $nom);
     $stmt->bindParam(':prenom_utilisateur', $prenom);
     $stmt->bindParam(':mail_utilisateur', $mail);
     $stmt->bindParam(':mot_de_passe', $mot_de_passe);
+    $stmt->bindParam(':administrateur', $admin);
     $stmt->execute();
 }
 
-function updateUser($id, $nom, $prenom, $mail) {
+function updateUser($id, $nom, $prenom, $mail, $admin) {
     /* @var $connection PDO */
     global $connection;
     
     $query = "UPDATE utilisateur
-                SET nom = :nom, prenom = :prenom, mail = :mail
+                SET nom = :nom, prenom = :prenom, mail = :mail, admin = :admin
                 WHERE id = :id;";
 
     $stmt = $connection->prepare($query);
@@ -85,6 +89,7 @@ function updateUser($id, $nom, $prenom, $mail) {
     $stmt->bindParam(':nom', $nom);
     $stmt->bindParam(':prenom', $prenom);
     $stmt->bindParam(':mail', $mail);
+    $stmt->bindParam(':admin', $admin);
     $stmt->execute();
 }
 

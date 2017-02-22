@@ -6,7 +6,8 @@ $id = $_POST['id'];
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $mail = $_POST['mail'];
+$admin = $_POST['admin'];
 
-updateUser($id, $nom, $prenom, $mail);
+updateUser($id, $nom, $prenom, $mail, $admin);
 
 header("Location: index.php");

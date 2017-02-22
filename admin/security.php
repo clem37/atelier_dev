@@ -23,4 +23,7 @@ if (isset($_SESSION['id'])) {
 if (!isset($user['id'])) {
     // Redirection vers la page de login
     header("Location: ../index.php");
+} elseif (!$user['admin']){ /* revient a dire == 0 donc pas admin */
+    // redirection vers la page d'accueil 
+    header("Location: ../document.php");
 }

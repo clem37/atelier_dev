@@ -16,6 +16,7 @@ require_once '../../layout/header.php';
             <th>Nom</th>
             <th>Prenom</th>
             <th>Adresse mail</th>
+            <th>Administrateur</th>
             <th>Actions</th>
             
         </tr>
@@ -26,6 +27,8 @@ require_once '../../layout/header.php';
             <td><?php echo $utilisateur['nom']; ?></td>
             <td><?php echo $utilisateur['prenom']; ?></td>
             <td><?php echo $utilisateur['mail']; ?></td>
+            <td><?php echo $utilisateur['admin'] ;?>
+            </td>
             <td>
                 <a href="update_form.php?id=<?php echo $utilisateur['id']; ?>">Modifier</a>
                 <form action="delete_query.php" method="POST">

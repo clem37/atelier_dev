@@ -12,6 +12,8 @@
         <input type="text" name="mail_utilisateur" id="libelle">
         <label for="nom">Mot de passe</label>
         <input type="password" name="mot_de_passe" id="libelle">
+        <label for="nom">Admin</label>
+        <input type="number" name="administrateur" id="libelle">
     </div>
     <input type="submit">
 </form>
