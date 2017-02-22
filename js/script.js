@@ -31,6 +31,34 @@ jQuery(document).ready(function ($) {
             $(window).bind("resize", ScaleSlider);
             $(window).bind("orientationchange", ScaleSlider);
             /*responsive code end*/
+            
+    $(function () {
+
+    $('#form-create-message').submit(function (event) {
+        event.preventDefault();
+
+        var form = $(this);
+        var button = form.find('*[type="submit"]');
+        
+        var nom = form.find('input[name="nom"]').val();
+        var prenom = form.find('input[name="prenom"]').val();
+        var mail = form.find('input[name="nom"]').val();
+        var message = form.find('input[name="message"]').val();
+        
+        button.prop('disabled', true);
+
+        $.ajax({
+            method: "POST",
+            url: "envoyer_mail.php",
+            data: {nom: nom, prenom: prenom, mail: mail, message: message},
+            
+        }).done(function (html) {
+            "Message envoyé";
+        });
+    });
+
+});        
+         
         });
   
 function openNav() {
