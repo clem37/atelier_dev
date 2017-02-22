@@ -10,7 +10,7 @@
         <input type="text" name="nom_service" id="libelle">
         <label for ="picto_service">Picto</label>
         <input type="file" name="picto_service">
-        
+        <label for='description_service'>Description</label>
         <textarea name="description_service"></textarea>
     </div>
     <input type="submit">

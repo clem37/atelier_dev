@@ -1,7 +1,9 @@
 <?php if(isset($user)) : ?>
     <?php echo $user['mail']; ?>
 <a href="logout.php">Déconnexion</a>
+
 <?php else : ?>
+
 <form method="POST" action="admin/">
     <p class="hidden_text">img</p>
 
@@ -12,4 +14,6 @@
 
 </form>
 <?php endif; ?>
+
+
 

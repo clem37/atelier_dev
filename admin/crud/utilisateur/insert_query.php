@@ -10,4 +10,8 @@ $admin = $_POST['administrateur'];
 
 insertUser($nom, $prenom, $mail, $mot_de_passe, $admin);
 
+if ($admin == 0) : 
+    header("Location: ../../index.php");
+endif;
+
 header("Location: index.php");

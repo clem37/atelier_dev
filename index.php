@@ -4,7 +4,7 @@
 
 <?php $liste_services = getAllServices();?>
 
-<?php $liste_actualites = getAllActualites();?>
+<?php $liste_actualites = getAllActualitesAfficher();?>
 
 <?php $liste_categories = getAllCategories();?>
 

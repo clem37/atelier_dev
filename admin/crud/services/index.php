@@ -24,7 +24,7 @@ require_once '../../layout/header.php';
         <tr>
             <td><?php echo $service['nom']; ?></td>
             <td><?php echo $service['description']; ?></td>
-            <td><?php echo $service['picto']; ?></td>
+            <td><img src='../../../uploads/<?php echo $service['picto']; ?>'></td>
             <td>
                 <a href="update_form.php?id=<?php echo $service['id']; ?>">Modifier</a>
                 <form action="delete_query.php" method="POST">

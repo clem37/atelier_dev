@@ -2,5 +2,5 @@
 
 echo "coucou" ;?>
 
-<a href="logout.php">Déconnexion</a>
+<a href="index.php">Retour sur la page d'accueil</a>
 
