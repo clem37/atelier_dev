@@ -1,5 +1,5 @@
 <?php require_once '../../layout/header.php'; ?>
-<script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
+
 <h1>Ajout d'un nouveau document</h1>
 
 <form action="insert_query.php" method="POST" enctype="multipart/form-data">

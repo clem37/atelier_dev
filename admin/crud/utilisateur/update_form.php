@@ -13,8 +13,11 @@ require_once '../../layout/header.php';
     <div>
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom" value="<?php echo $utilisateur['nom']; ?>">
+        <label>Prénom</label>
         <input type="text" name="prenom" id="nom" value="<?php echo $utilisateur['prenom']; ?>">
+        <label>E-mail</label>
         <input type="email" name="mail" id="nom" value="<?php echo $utilisateur['mail']; ?>">
+        <label>Admin</label>
         <input type="number" name="admin" id="nom" value="<?php echo $utilisateur['admin']; ?>">
     </div>
     <input type="hidden" name="id" value="<?php echo $utilisateur['id']; ?>">

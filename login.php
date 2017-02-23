@@ -1,6 +1,7 @@
 <?php if (isset($user)) : ?>
     <?php echo $user['mail']; ?>
     <a href="logout.php">Déconnexion</a>
+    <a href="document.php">Documents</a>
 
 <?php else : ?>
 

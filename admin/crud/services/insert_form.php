@@ -1,6 +1,4 @@
 <?php require_once '../../layout/header.php'; ?>
-<script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({selector: 'textarea'});</script>
 
 
 <h1>Ajout d'un nouveau service</h1>

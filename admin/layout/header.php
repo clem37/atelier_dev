@@ -10,6 +10,8 @@ require_once __DIR__ . '/../security.php';
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <link rel="stylesheet" type = text/css href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
         <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <script>tinymce.init({selector: 'textarea'});</script>
         <script src="<?php echo $siteurl; ?>admin/layout/script.js" type="text/javascript"></script>
 
     </head>

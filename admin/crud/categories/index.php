@@ -6,7 +6,7 @@ $liste_categories = getAllCategories();
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des actualités</h1>
+<h1>Gestion des catégories</h1>
 
 <a href="insert_form.php">Ajouter</a>
 

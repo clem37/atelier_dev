@@ -35,14 +35,16 @@ function getAllCategories() {
     return $stmt->fetchAll();
 }
 
-function getVille($id) {
+function getCategorie($id) {
     global $connection;
 
     $query = "SELECT
-                ville.id,
-                ville.nom
-            FROM ville
-            WHERE ville.id = :id;";
+                categorie.id,
+                categorie.nom,
+                categorie.description,
+                categorie.image
+            FROM categorie
+            WHERE categorie.id = :id;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);
@@ -51,37 +53,43 @@ function getVille($id) {
     return $stmt->fetch();
 }
 
-function insertVille($nom) {
+function insertCategorie($nom, $description, $image) {
     /* @var $connection PDO */
     global $connection;
 
-    $query = "INSERT INTO ville (nom)
-                VALUES (:nom_ville);";
+    $query = "INSERT INTO categorie (nom, description, image)
+                VALUES (:nom_categorie, :description, :image);";
 
     $stmt = $connection->prepare($query);
-    $stmt->bindParam(':nom_ville', $nom);
+    $stmt->bindParam(':nom_categorie', $nom);
+    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':image', $image);
     $stmt->execute();
 }
 
-function updateVille($id, $nom) {
+function updateCategorie($id, $nom, $description, $image) {
     /* @var $connection PDO */
     global $connection;
 
-    $query = "UPDATE ville
-                SET nom = :nom
+    $query = "UPDATE categorie
+                SET nom = :nom,
+                description = :description,
+                image = :image
                 WHERE id = :id;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':nom', $nom);
+    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':image', $image);
     $stmt->execute();
 }
 
-function deleteVille($id) {
+function deleteCategorie($id) {
     /* @var $connection PDO */
     global $connection;
 
-    $query = "DELETE FROM ville WHERE id = :id;";
+    $query = "DELETE FROM categorie WHERE id = :id;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);

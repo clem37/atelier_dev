@@ -6,8 +6,7 @@ $service = getService($id);
 
 require_once '../../layout/header.php';
 ?>
-<script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({selector: 'textarea'});</script>
+
 <h1>Modification d'un service</h1>
 
 <form action="update_query.php" method="POST" enctype="multipart/form-data">
