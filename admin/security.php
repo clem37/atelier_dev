@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../model/database.php';
 
 session_start();
@@ -7,7 +8,7 @@ session_start();
 if (isset($_SESSION['id'])) {
     // On récupère les infos de l'utilisateur en cours
     $user = getUser($_SESSION['id']);
-} else if(isset($_POST['email']) && isset($_POST['password'])) {
+} else if (isset($_POST['email']) && isset($_POST['password'])) {
     // Si l'utilisateur essaye de s'authentifier
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -23,7 +24,7 @@ if (isset($_SESSION['id'])) {
 if (!isset($user['id'])) {
     // Redirection vers la page de login
     header("Location: ../index.php");
-} elseif (!$user['admin']){ /* revient a dire == 0 donc pas admin */
+} elseif (!$user['admin']) { /* revient a dire == 0 donc pas admin */
     // redirection vers la page d'accueil 
     header("Location: ../document.php");
 }

@@ -11,7 +11,7 @@ function getAllDocuments() {
     FROM document
     
     ";
-    
+
     $stmt = $connection->prepare($query);
     $stmt->execute();
 
@@ -21,7 +21,7 @@ function getAllDocuments() {
 function insertDocument($nom, $doc) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "INSERT INTO document (nom, doc)
                 VALUES (:nom_document, :fichier);";
 
@@ -34,7 +34,7 @@ function insertDocument($nom, $doc) {
 function deleteDocument($id) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "DELETE FROM document WHERE id = :id;";
 
     $stmt = $connection->prepare($query);

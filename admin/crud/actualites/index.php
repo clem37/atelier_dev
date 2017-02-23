@@ -24,21 +24,21 @@ require_once '../../layout/header.php';
     </thead>
     <tbody>
         <?php foreach ($liste_actualites as $actualite) : ?>
-        <tr>
-            <td><?php echo $actualite['titre']; ?></td>
-            <td><img src='../../../uploads/<?php echo $actualite['image']; ?>'></td>
-            <td><?php echo $actualite['description_courte']; ?></td>
-            <td><?php echo $actualite['description_longue']; ?></td>
-            <td><?php echo $actualite['date_creation_format']; ?></td>
-            <td><?php echo $actualite['afficher']; ?></td>
-            <td>
-                <a href="update_form.php?id=<?php echo $actualite['id']; ?>">Modifier</a>
-                <form action="delete_query.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $actualite['id']; ?>">
-                    <input type="submit" value="Supprimer">
-                </form>
-            </td>
-        </tr>
+            <tr>
+                <td><?php echo $actualite['titre']; ?></td>
+                <td><img src='../../../uploads/<?php echo $actualite['image']; ?>'></td>
+                <td><?php echo $actualite['description_courte']; ?></td>
+                <td><?php echo $actualite['description_longue']; ?></td>
+                <td><?php echo $actualite['date_creation_format']; ?></td>
+                <td><?php echo $actualite['afficher']; ?></td>
+                <td>
+                    <a href="update_form.php?id=<?php echo $actualite['id']; ?>">Modifier</a>
+                    <form action="delete_query.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $actualite['id']; ?>">
+                        <input type="submit" value="Supprimer">
+                    </form>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>

@@ -6,7 +6,7 @@
 
 <?php $liste_actualites = getAllActualitesAfficher(); ?>
 
-<?php $liste_categories = getAllCategories(); ?>
+<?php $liste_categories = getAllCategoriesAfficher(); ?>
 
 
 <main>
@@ -33,7 +33,7 @@
             <article class="clearfix" style="margin-right: 25px;">
                 <h1><?php echo $categorie['nom']; ?></h1>
                 <hr class="soulignage">
-                <img src="images/<?php echo $categorie['image']; ?>">
+                <img src="uploads/<?php echo $categorie['image']; ?>">
                 <p><?php echo $categorie['description']; ?></p>
                 <a href="#" class="btn">en savoir +</a>
             </article>

@@ -1,13 +1,13 @@
 <?php require_once '../../layout/header.php'; ?>
 
 <script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
- <script>tinymce.init({ selector:'textarea' });</script>
+<script>tinymce.init({selector: 'textarea'});</script>
 
 <h1>Ajout d'une nouvelle actualite</h1>
 
 <form action="insert_query.php" method="POST" enctype="multipart/form-data">
     <div>
-        <label for="nom">Titre</label>
+        <label>Titre</label>
         <input type="text" name="titre" id="libelle">
         <label>Description Courte</label>
         <textarea name="description_courte"></textarea>

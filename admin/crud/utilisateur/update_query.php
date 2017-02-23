@@ -1,4 +1,5 @@
 <?php
+
 require_once '../../security.php';
 require_once '../../../model/database.php';
 
@@ -10,7 +11,7 @@ $admin = $_POST['admin'];
 
 updateUser($id, $nom, $prenom, $mail, $admin);
 
-if ($admin == 0) : 
+if ($admin == 0) :
     header("Location: ../../index.php");
 endif;
 

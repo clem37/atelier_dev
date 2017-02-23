@@ -1,6 +1,6 @@
 <?php
 
-function getAllServices () {
+function getAllServices() {
     global $connection;
     $query = "
         SELECT
@@ -10,17 +10,16 @@ function getAllServices () {
           service.description
         FROM service;
         ";
-    
+
     $stmt = $connection->prepare($query);
     $stmt->execute();
 
-    return $stmt->fetchAll(); 
-    
-    }
-    
-    function getService($id) {
+    return $stmt->fetchAll();
+}
+
+function getService($id) {
     global $connection;
-    
+
     $query = "SELECT
                 service.id,
                 service.nom,
@@ -35,11 +34,11 @@ function getAllServices () {
 
     return $stmt->fetch();
 }
-    
-    function insertService($nom, $description, $picto) {
+
+function insertService($nom, $description, $picto) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "INSERT INTO service (nom, description, picto)
                 VALUES (:nom_service, :description_service, :picto_service);";
 
@@ -53,7 +52,7 @@ function getAllServices () {
 function updateServices($id, $nom, $description, $picto) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "UPDATE service
                 SET nom = :nom, description = :description, picto = :picto
                 WHERE id = :id;";
@@ -69,7 +68,7 @@ function updateServices($id, $nom, $description, $picto) {
 function deleteService($id) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "DELETE FROM service WHERE id = :id;";
 
     $stmt = $connection->prepare($query);

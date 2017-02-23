@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$liste_actualites = getAllActualites();
+$liste_categories = getAllCategories();
 
 require_once '../../layout/header.php';
 ?>
@@ -15,30 +15,24 @@ require_once '../../layout/header.php';
         <tr>
             <th>Titre</th>
             <th>Image</th>
-            <th>Description courte</th>
-            <th>Description longue</th>
-            <th>Date de création</th>
-            <th>Afficher ou non</th>
+            <th>Description</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($liste_actualites as $actualite) : ?>
-        <tr>
-            <td><?php echo $actualite['titre']; ?></td>
-            <td><img src='../../../uploads/<?php echo $actualite['image']; ?>'></td>
-            <td><?php echo $actualite['description_courte']; ?></td>
-            <td><?php echo $actualite['description_longue']; ?></td>
-            <td><?php echo $actualite['date_creation_format']; ?></td>
-            <td><?php echo $actualite['afficher']; ?></td>
-            <td>
-                <a href="update_form.php?id=<?php echo $actualite['id']; ?>">Modifier</a>
-                <form action="delete_query.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $actualite['id']; ?>">
-                    <input type="submit" value="Supprimer">
-                </form>
-            </td>
-        </tr>
+        <?php foreach ($liste_categories as $categorie) : ?>
+            <tr>
+                <td><?php echo $categorie['nom']; ?></td>
+                <td><img src='../../../uploads/<?php echo $categorie['image']; ?>'></td>
+                <td><?php echo $categorie['description']; ?></td>
+                <td>
+                    <a href="update_form.php?id=<?php echo $categorie['id']; ?>">Modifier</a>
+                    <form action="delete_query.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $categorie['id']; ?>">
+                        <input type="submit" value="Supprimer">
+                    </form>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>

@@ -2,7 +2,7 @@
 
 function getUser($id) {
     global $connection;
-    
+
     $query = "SELECT
                 utilisateur.id,
                 utilisateur.prenom,
@@ -12,17 +12,17 @@ function getUser($id) {
             FROM utilisateur
             WHERE utilisateur.id = :id
             ";
-    
+
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
-    
+
     return $stmt->fetch();
 }
 
 function getUserByEmailPassword($mail, $password) {
     global $connection;
-    
+
     $query = "SELECT
                 utilisateur.id,
                 utilisateur.nom,
@@ -33,18 +33,18 @@ function getUserByEmailPassword($mail, $password) {
             WHERE utilisateur.mail = :email
             AND utilisateur.mot_de_passe = MD5(:password)
             ";
-    
+
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':email', $mail);
     $stmt->bindParam(':password', $password);
     $stmt->execute();
-    
+
     return $stmt->fetch();
 }
 
 function getAllUser() {
     global $connection;
-    
+
     $query = "SELECT
                 utilisateur.id,
                 utilisateur.prenom,
@@ -53,17 +53,17 @@ function getAllUser() {
                 utilisateur.admin
             FROM utilisateur;
             ";
-    
+
     $stmt = $connection->prepare($query);
     $stmt->execute();
-    
+
     return $stmt->fetchAll();
 }
 
 function insertUser($nom, $prenom, $mail, $mot_de_passe, $admin) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "INSERT INTO utilisateur (nom, prenom, mail, mot_de_passe, admin)
                 VALUES (:nom_utilisateur, :prenom_utilisateur, :mail_utilisateur, MD5(:mot_de_passe), :administrateur);";
 
@@ -79,7 +79,7 @@ function insertUser($nom, $prenom, $mail, $mot_de_passe, $admin) {
 function updateUser($id, $nom, $prenom, $mail, $admin) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "UPDATE utilisateur
                 SET nom = :nom, prenom = :prenom, mail = :mail, admin = :admin
                 WHERE id = :id;";
@@ -96,7 +96,7 @@ function updateUser($id, $nom, $prenom, $mail, $admin) {
 function deleteUser($id) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "DELETE FROM utilisateur WHERE id = :id;";
 
     $stmt = $connection->prepare($query);

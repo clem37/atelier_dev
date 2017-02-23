@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
             data: {nom: nom, prenom: prenom, mail: mail, message: message},
         }).done(function (html) {
             button.prop('disabled', false);
-            
+
         });
 
     });

@@ -1,6 +1,6 @@
 <?php
 
-function getAllCategories () {
+function getAllCategoriesAfficher() {
     global $connection;
     $query = "
         SELECT
@@ -11,7 +11,24 @@ function getAllCategories () {
         FROM categorie
         LIMIT 3;
         ";
-   
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function getAllCategories() {
+    global $connection;
+    $query = "
+        SELECT
+        categorie.id,
+        categorie.nom,
+        categorie.description,
+        categorie.image
+        FROM categorie;
+        ";
+
     $stmt = $connection->prepare($query);
     $stmt->execute();
 
@@ -20,7 +37,7 @@ function getAllCategories () {
 
 function getVille($id) {
     global $connection;
-    
+
     $query = "SELECT
                 ville.id,
                 ville.nom
@@ -37,7 +54,7 @@ function getVille($id) {
 function insertVille($nom) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "INSERT INTO ville (nom)
                 VALUES (:nom_ville);";
 
@@ -49,7 +66,7 @@ function insertVille($nom) {
 function updateVille($id, $nom) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "UPDATE ville
                 SET nom = :nom
                 WHERE id = :id;";
@@ -63,7 +80,7 @@ function updateVille($id, $nom) {
 function deleteVille($id) {
     /* @var $connection PDO */
     global $connection;
-    
+
     $query = "DELETE FROM ville WHERE id = :id;";
 
     $stmt = $connection->prepare($query);

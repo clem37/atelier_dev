@@ -21,19 +21,19 @@ require_once '../../layout/header.php';
     </thead>
     <tbody>
         <?php foreach ($liste_services as $service) : ?>
-        <tr>
-            <td><?php echo $service['nom']; ?></td>
-            <td><?php echo $service['description']; ?></td>
-            <td><img src='../../../uploads/<?php echo $service['picto']; ?>'></td>
-            <td>
-                <a href="update_form.php?id=<?php echo $service['id']; ?>">Modifier</a>
-                <form action="delete_query.php" method="POST">
-                    
-                    <input type="hidden" name="id" value="<?php echo $service['id']; ?>">
-                    <input type="submit" value="Supprimer">
-                </form>
-            </td>
-        </tr>
+            <tr>
+                <td><?php echo $service['nom']; ?></td>
+                <td><?php echo $service['description']; ?></td>
+                <td><img src='../../../uploads/<?php echo $service['picto']; ?>'></td>
+                <td>
+                    <a href="update_form.php?id=<?php echo $service['id']; ?>">Modifier</a>
+                    <form action="delete_query.php" method="POST">
+
+                        <input type="hidden" name="id" value="<?php echo $service['id']; ?>">
+                        <input type="submit" value="Supprimer">
+                    </form>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
